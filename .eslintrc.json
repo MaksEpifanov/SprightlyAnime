@@ -25,7 +25,15 @@
     "plugins": [
         "react",
         "jsx-a11y",
-        "@typescript-eslint"
+        "@typescript-eslint",
+        "import"
     ],
-    "rules": {}
+    "rules": {
+        "react/function-component-definition": [
+            2,
+            {
+                "namedComponents": "arrow-function"
+            }
+        ]
+    }
 }
