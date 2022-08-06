@@ -1,13 +1,15 @@
 import { useEffect } from 'react';
-import { Category, fetchAnimeList } from '../../services/anime-list.service';
+import { useAppDispatch } from '../../store/hooks';
+
+import { fetchData } from '../../store/slices/animeListSlice';
+import { fetchAnimeList, Category } from '../../services/anime-list.service';
 
 const HomePage = () => {
+  const dispatch = useAppDispatch();
   useEffect(() => {
-    (async () => {
-      const { pagination } = await fetchAnimeList(Category.top);
-      console.log(pagination);
-    })();
-  });
+    dispatch(fetchData(fetchAnimeList.bind(null, Category.now)));
+  }, [dispatch]);
+
   return (
     <div>HomePage</div>
   );

@@ -9,9 +9,10 @@ const App: React.FC = () => (
   <Routes>
     <Route path="/" element={<Layout />}>
       <Route index element={<HomePage />} />
-      <Route path=":id" element={<AnimeInfoPage />} />
-      <Route path="/upcoming" element={<UpcomingPage />} />
-      <Route path="/schedules" element={<SchedulesPage />} />
+      <Route path="anime/:id" element={<AnimeInfoPage />} />
+      <Route path="upcoming" element={<UpcomingPage />} />
+      <Route path="schedules" element={<SchedulesPage />} />
+      <Route path="*" element={<div>404</div>} />
     </Route>
   </Routes>
 );

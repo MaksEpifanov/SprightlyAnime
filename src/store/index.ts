@@ -1,7 +1,10 @@
 import { configureStore } from '@reduxjs/toolkit';
+import animeListSlice from './slices/animeListSlice';
 
 export const store = configureStore({
-  reducer: {},
+  reducer: {
+    animeList: animeListSlice,
+  },
 });
 
 export type RootState = ReturnType<typeof store.getState>;

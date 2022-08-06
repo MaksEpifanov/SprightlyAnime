@@ -24,3 +24,11 @@ export interface IAnimesData {
   data: IAnime[]
   pagination: IPagination
 }
+
+export interface SerializedError {
+  status?: number
+  name?: string
+  message?: string
+  stack?: string
+  code?: string
+}
