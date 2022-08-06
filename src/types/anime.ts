@@ -29,28 +29,33 @@ export enum SeasonAnime {
   Fall = 'fall',
 }
 
-export interface IMalUrl {
+export interface IMalBasic {
   mal_id: number
-  type: string
   name: string
   url: string
+}
+
+interface IMalUrl extends IMalBasic {
+  type: string
+}
+
+export interface IImages {
+  jpg: {
+    image_url: string | null
+    small_image_url: string | null
+    large_image_url: string | null
+  }
+  webp: {
+    image_url: string | null
+    small_image_url: string | null
+    large_image_url: string | null
+  }
 }
 
 export interface IAnime {
   mal_id: number
   url: string
-  images: {
-    jpg: {
-      image_url: string | null
-      small_image_url: string | null
-      large_image_url: string | null
-    }
-    webp: {
-      image_url: string | null
-      small_image_url: string | null
-      large_image_url: string | null
-    }
-  }
+  images: IImages
   trailer: {
     youtube_id: string | null
     url: string | null

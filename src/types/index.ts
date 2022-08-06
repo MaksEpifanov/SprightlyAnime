@@ -1,5 +1,4 @@
-import type { IAnime } from './anime';
-import type { IPagination } from './pagination';
+import { IAnime } from './anime';
 
 export enum StatusLoading {
   idle = 'idle',
@@ -8,7 +7,20 @@ export enum StatusLoading {
   failure = 'failure',
 }
 
+export interface IPagination {
+  last_visible_page: number
+  has_next_page: boolean
+  items: {
+    count: number
+    total: number
+    per_page: number
+  }
+}
+
+export interface IResponse<T> {
+  data: T
+}
 export interface IAnimesData {
-  data: Array<IAnime>
-  pagination: IPagination | null
+  data: IAnime[]
+  pagination: IPagination
 }
