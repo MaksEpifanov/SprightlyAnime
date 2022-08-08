@@ -28,6 +28,16 @@
         "@typescript-eslint",
         "import"
     ],
+    "settings": {
+        "import/resolver": {
+            "node": {
+                "moduleDirectory": [
+                    "node_modules",
+                    "src/"
+                ]
+            }
+        }
+    },
     "rules": {
         "react/function-component-definition": [
             2,
@@ -35,6 +45,8 @@
                 "namedComponents": "arrow-function"
             }
         ],
+        "react/prop-types": "off",
+        "react/require-default-props": "off",
         "no-param-reassign": [
             "error",
             {

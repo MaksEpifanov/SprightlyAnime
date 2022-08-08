@@ -1,6 +1,9 @@
 import { createGlobalStyle } from 'styled-components';
+import { normalize } from 'styled-normalize';
 
 export default createGlobalStyle`
+  ${normalize}
+
   *,
   *::before,
   *::after {
@@ -12,24 +15,32 @@ export default createGlobalStyle`
   :root {
     --main-bg-color: #0e0e0e;
     --second-bg-color: #1c1c1c;
-    --main-text-color: #aaaaaa;
-    --second-text-color: #5a2e98;
-    --active-text-color: #8f7003;
-  }
 
-  #root {
-    margin: 0 auto;
-    padding: 10px;   
+    --main-text-color: #aaaaaa;
+    --second-text-color: #7f59b5;
+    --placeholder-text-color: #666666;
+    --active-text-color: #8f7003;
+
+    --main-font: 'Source Sans Pro', sans-serif;
+    --header-font: 'Arima', cursive;
+    --logo-font: 'Inspiration', cursive;
   }
 
   body {
     height: 100vh;
-
-    font-family: 'Source Sans Pro', sans-serif;
-    font-weight: 400;
-    font-size: 18px;
-
     background-color: var(--main-bg-color);
+    margin: 0 auto;
+    padding: 10px;  
+    font-family: var(--main-font);
+    font-size: 18px;
+    font-weight: 400;
     color: white;
+    
+  }
+  
+  #root {
+    height: 100%;
+
+
   }
 `;

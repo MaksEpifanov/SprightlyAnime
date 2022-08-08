@@ -6,13 +6,6 @@
     "@reduxjs/toolkit": "^1.8.3",
     "@styled-icons/fa-solid": "^10.34.0",
     "@styled-icons/material": "^10.34.0",
-    "@testing-library/jest-dom": "^5.16.4",
-    "@testing-library/react": "^13.3.0",
-    "@testing-library/user-event": "^13.5.0",
-    "@types/jest": "^27.5.2",
-    "@types/node": "^16.11.47",
-    "@types/react": "^18.0.15",
-    "@types/react-dom": "^18.0.6",
     "axios": "^0.27.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -20,14 +13,12 @@
     "react-router-dom": "^6.3.0",
     "react-scripts": "5.0.1",
     "styled-components": "^5.3.5",
-    "styled-icons": "^10.45.0",
-    "typescript": "^4.7.4",
-    "web-vitals": "^2.1.4"
+    "styled-normalize": "^8.0.7",
+    "typescript": "^4.7.4"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
   "browserslist": {
@@ -43,6 +34,9 @@
     ]
   },
   "devDependencies": {
+    "@types/node": "^16.11.47",
+    "@types/react": "^18.0.15",
+    "@types/react-dom": "^18.0.6",
     "@types/styled-components": "^5.1.25",
     "@typescript-eslint/eslint-plugin": "^5.31.0",
     "@typescript-eslint/parser": "^5.31.0",

@@ -1,8 +1,8 @@
 import { useEffect } from 'react';
-import { useAppDispatch } from '../../store/hooks';
+import { useAppDispatch } from '../../app/hooks';
 
-import { fetchData } from '../../store/slices/animeListSlice';
-import { fetchAnimeList, Category } from '../../services/anime-list.service';
+import { fetchData } from '../../features/list/listSlice';
+import { fetchAnimeList, Category } from '../../services/API/animeList.service';
 
 const HomePage = () => {
   const dispatch = useAppDispatch();

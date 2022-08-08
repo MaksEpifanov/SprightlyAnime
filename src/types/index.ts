@@ -1,4 +1,4 @@
-import { IAnime } from './anime';
+import { IAnime } from './anime.types';
 
 export enum StatusLoading {
   idle = 'idle',
@@ -20,7 +20,8 @@ export interface IPagination {
 export interface IResponse<T> {
   data: T
 }
-export interface IAnimesData {
+
+export interface IListData {
   data: IAnime[]
   pagination: IPagination
 }
