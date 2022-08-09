@@ -1,5 +1,5 @@
 import type { IAnime, IImages } from 'types/anime.types';
-import type { IResponse } from 'types';
+import type { IResponse } from 'types/common.types';
 import http from '../http';
 
 type IScore = {

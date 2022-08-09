@@ -1,6 +1,6 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { IAnime } from '../../types/anime.types';
-import { StatusLoading } from '../../types';
+import type { IAnime } from 'types/anime.types';
+import { StatusLoading } from 'types/common.types';
 
 export interface IAnimeInfo {
   data: IAnime | null

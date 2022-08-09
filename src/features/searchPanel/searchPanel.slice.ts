@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { StatusLoading } from 'types';
+import { StatusLoading } from 'types/common.types';
 
 const initialState = {
   data: null,

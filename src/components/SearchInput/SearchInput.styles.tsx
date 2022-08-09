@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { Search } from '@styled-icons/fa-solid';
-import type { SearchInputProps } from '.';
+import type { SearchInputProps } from './SearchInput.types';
 
 export const Wrapper = styled.div<SearchInputProps>`
   width: 100%;

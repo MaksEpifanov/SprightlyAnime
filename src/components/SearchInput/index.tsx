@@ -4,11 +4,8 @@ import {
 
 import {
   Wrapper, Input, ClearButton, SearchIcon,
-} from './styled';
-
-export type SearchInputProps = {
-  gray?: boolean
-};
+} from './SearchInput.styles';
+import { SearchInputProps } from './SearchInput.types';
 
 const SearchInput: React.FC<SearchInputProps> = ({ gray = false }) => {
   const inputEl = useRef<HTMLInputElement>(null);

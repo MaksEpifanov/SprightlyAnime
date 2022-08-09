@@ -19,7 +19,7 @@ export default createGlobalStyle`
     --main-text-color: #aaaaaa;
     --second-text-color: #7f59b5;
     --placeholder-text-color: #666666;
-    --active-text-color: #8f7003;
+    --active-text-color: #ebb848;
 
     --main-font: 'Source Sans Pro', sans-serif;
     --header-font: 'Arima', cursive;
@@ -40,7 +40,5 @@ export default createGlobalStyle`
   
   #root {
     height: 100%;
-
-
   }
 `;

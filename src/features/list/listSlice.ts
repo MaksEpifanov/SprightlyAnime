@@ -1,5 +1,5 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-import { StatusLoading, IListData, SerializedError } from 'types';
+import { StatusLoading, IListData, SerializedError } from 'types/common.types';
 
 export interface IAnimeList extends IListData {
   status: StatusLoading

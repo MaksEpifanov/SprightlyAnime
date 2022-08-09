@@ -1,5 +1,5 @@
 import type { IAnime } from 'types/anime.types';
-import type { IResponse } from 'types';
+import type { IResponse } from 'types/common.types';
 import http from '../http';
 
 export enum FilterByDay {

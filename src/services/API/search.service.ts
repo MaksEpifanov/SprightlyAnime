@@ -1,4 +1,4 @@
-import type { IListData } from 'types';
+import type { IListData } from 'types/common.types';
 import type { TypeAnime, StatusAnime, RatingAnime } from 'types/anime.types';
 import http from '../http';
 

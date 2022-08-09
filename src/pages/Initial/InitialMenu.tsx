@@ -8,9 +8,9 @@ const Wrapper = styled.nav`
 
 const InitialMenu = () => (
   <Wrapper>
-    <MenuLink to="/home">Home</MenuLink>
-    <MenuLink to="/trending">Trending</MenuLink>
-    <MenuLink to="/ongoing">Ongoing</MenuLink>
+    <MenuLink white to="/home">Home</MenuLink>
+    <MenuLink white to="/trending">Trending</MenuLink>
+    <MenuLink white to="/ongoing">Ongoing</MenuLink>
   </Wrapper>
 );
 

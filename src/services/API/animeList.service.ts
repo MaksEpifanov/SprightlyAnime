@@ -1,4 +1,4 @@
-import type { IListData } from 'types';
+import type { IListData } from 'types/common.types';
 import http from '../http';
 
 export enum Category {
