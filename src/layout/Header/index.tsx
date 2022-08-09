@@ -2,14 +2,15 @@ import { Random, CalendarAlt } from '@styled-icons/fa-solid';
 import { Upcoming } from '@styled-icons/material';
 
 import MenuLink from 'components/MenuLink';
+import Logo from 'components/Logo';
 
 import {
-  HeaderMenu, Logo, Menu,
+  HeaderMenu, Menu,
 } from './Header.styles';
 
 const Header = () => (
   <HeaderMenu>
-    <Logo to="/home">Sprightly</Logo>
+    <Logo short />
     {/* Search Panel */}
     <Menu>
       <MenuLink to="/upcoming">

@@ -52,6 +52,11 @@ export interface IImages {
   }
 }
 
+export interface ITitle {
+  type: string
+  title: string
+}
+
 export interface IAnime {
   mal_id: number
   url: string
@@ -61,7 +66,8 @@ export interface IAnime {
     url: string | null
     embed_url: string | null
   }
-  titles: Array<string>
+  title_english: string
+  titles: ITitle[]
   type: TypeAnime
   source: string | null
   episodes: number | null
@@ -75,7 +81,7 @@ export interface IAnime {
   duration: string | null
   rating: RatingAnime
   score: number | null
-  // scored_by
+  scored_by: number
   rank: number | null
   popularity: number | null
   // members

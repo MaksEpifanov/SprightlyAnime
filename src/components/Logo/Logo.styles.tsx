@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 import { LogoProps } from './Logo.types';
 
 export const Wrapper = styled.div<LogoProps>`
@@ -13,6 +14,11 @@ export const Wrapper = styled.div<LogoProps>`
   &::first-letter {
     color: var(--second-text-color);
   }
+`;
+
+export const LinkLogo = styled(Link)`
+  text-decoration: none;
+  color: white;
 `;
 
 export const AnimeSpan = styled.span`

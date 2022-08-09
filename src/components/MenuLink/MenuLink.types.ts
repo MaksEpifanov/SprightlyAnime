@@ -8,5 +8,5 @@ export interface MenuLinkProps {
 }
 
 export interface NavLinkStyledProps {
-  white?: boolean
+  $white: boolean
 }

@@ -27,15 +27,16 @@ export default createGlobalStyle`
   }
 
   body {
-    height: 100vh;
-    background-color: var(--main-bg-color);
+    height: 90vh;
     margin: 0 auto;
+    margin-top: 10vh;
     padding: 10px;  
+
     font-family: var(--main-font);
     font-size: 18px;
     font-weight: 400;
     color: white;
-    
+    background-color: var(--main-bg-color);
   }
   
   #root {

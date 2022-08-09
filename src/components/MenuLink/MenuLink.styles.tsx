@@ -9,7 +9,7 @@ export default styled(NavLink) <NavLinkStyledProps>`
 
   font-size: 18px;
   text-decoration: none;
-  color: ${(props) => (!props.white ? 'var(--main-text-color)' : 'white')};
+  color: ${(props) => (!props.$white ? 'var(--main-text-color)' : 'white')};
 
   transition: color .3s, transform .4s;
 
