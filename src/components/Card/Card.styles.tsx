@@ -1,33 +1,41 @@
 import styled from 'styled-components';
-import { StyleCardImageProps } from './Card.types';
+import { StyleCardImageProps, SecondBaseDivProps } from './Card.types';
 
-export const Wrapper = styled.div`
+export const Wrapper = styled.div<SecondBaseDivProps>`
   position: relative;
 
-  height: 300px;
-  width: 180px;
+  height: ${(props) => (props.second ? '100px' : '300px')};
+  width: ${(props) => (props.second ? '100%' : '180px')};
+  max-width: ${(props) => (props.second ? '450px' : null)};
 
   display: flex;
-  flex-direction: column;
   align-items: center;
-
+  
   color: var(--main-text-color);
+  border-radius: 10px;
 
+  padding: ${(props) => (props.second ? '10px' : null)};
+  flex-direction: ${(props) => (!props.second ? 'column' : null)};
+  background-color: ${(props) => (props.second ? 'var(--second-bg-color)' : null)};
+
+
+  overflow: hidden;
   &:hover{
     cursor: pointer;
 
     &&>*:last-child {
-      height: 80%;
+      ${(props) => (!props.second ? 'height: 80%' : null)};
     }
   }
 `;
 
 export const CardImage = styled.div<StyleCardImageProps>`
   height: 100%;
-  width: 100%;
-
+  width: ${(props) => (!props.second ? '100%' : '80px')};
+  
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
+  border-radius: ${(props) => (props.second ? '10px' : null)};
 
   background-image: url(${(props) => props.linkImg});
   background-repeat: no-repeat;
@@ -67,7 +75,7 @@ export const InfoLi = styled.li`
   }
 `;
 
-export const CardDownPanel = styled.div`
+export const CardDownPanelWrapper = styled.div`
   padding: 5px;
   width: 100%;
   
@@ -81,10 +89,27 @@ export const CardDownPanel = styled.div`
   font-size: 14px;
 `;
 
-export const Score = styled.div`
+export const CardDownPanelStats = styled.div<SecondBaseDivProps>`
+  margin-left: ${(props) => (props.second ? '20px' : null)};
+
   display: flex;
   align-items: center;
-  gap: 5px;
+  gap: ${(props) => (props.second ? '30px' : '5px')};
+
+  color: ${(props) => (props.second ? 'var(--placeholder-text-color)' : null)};
+`;
+
+export const CardSecondInfo = styled.div`
+  margin-left: 10px;
+  margin-bottom: 20px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  &>*:first-child {
+  font-size: 20px;
+  }
 `;
 
 export const Title = styled.div`

@@ -26,6 +26,8 @@ const HomePage = () => {
         <Card item={anime} />
         <br />
         <Card item={anime2} />
+        <br />
+        <Card item={anime2} second />
       </>
     );
   }

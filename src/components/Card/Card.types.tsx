@@ -1,10 +1,16 @@
+import { HTMLAttributes } from 'react';
 import type { IAnime } from 'types/anime.types';
 
-export interface CardProps {
+interface SecondBaseProps {
   second?: boolean
+}
+
+export interface CardProps extends SecondBaseProps {
   item: IAnime
 }
 
-export interface StyleCardImageProps {
+export interface StyleCardImageProps extends SecondBaseProps, HTMLAttributes<HTMLImageElement> {
   linkImg: string | null
 }
+
+export interface SecondBaseDivProps extends SecondBaseProps, HTMLAttributes<HTMLDivElement> { }

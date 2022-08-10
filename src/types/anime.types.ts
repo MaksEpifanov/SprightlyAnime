@@ -74,8 +74,8 @@ export interface IAnime {
   status: StatusAnime
   airing: boolean
   aired: {
-    from: string | null
-    to: string | null
+    from: string
+    to: string
     // prop
   }
   duration: string | null
