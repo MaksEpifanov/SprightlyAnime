@@ -1,29 +1,44 @@
-import { IAnime } from 'types/anime.types';
 import Card from 'components/Card';
 import SkeletonCard from 'components/Skeletons/SkeletonCard';
-import type { ListProps } from './List.types';
-import { Wrapper } from './List.styles';
+import { useAppSelector } from 'app/store.hooks';
+import { StatusLoading } from 'types/common.types';
+import { Wrapper, TitleWrapper } from './List.styles';
 
-const skeletonsRender = new Array(25)
-  .map((n, ind) => ind)
-  .map((number) => <SkeletonCard key={number} />);
+const skeletonData = new Array(25)
+  .fill(null)
+  .map((n, ind) => ind);
 
-const List: React.FC<ListProps<IAnime[]>> = (props) => {
-  const { isLoading = false, isFailed = false, data = [] } = props;
+interface ListProps {
+  title: string
+}
+
+const List: React.FC<ListProps> = ({ title }) => {
+  const {
+    status, data, errors, pagination,
+  } = useAppSelector((state) => state.list);
+
   const dataRender = data.map((item) => (
     <Card item={item} key={item.mal_id} />
   ));
 
-  if (isLoading) {
-    return (<Wrapper>{skeletonsRender}</Wrapper>);
-  } if (isFailed) {
+  const skeletonsRender = skeletonData.map((number) => <SkeletonCard key={number} />);
+
+  if (status === StatusLoading.success) {
+    console.log(pagination);
+    return (
+      <>
+        <TitleWrapper>
+          <h2>{title}</h2>
+        </TitleWrapper>
+        <Wrapper>
+          {dataRender}
+        </Wrapper>
+      </>
+    );
+  } if (status === StatusLoading.failure) {
     return (<div>Errors....</div>);
   }
-  return (
-    <Wrapper>
-      {dataRender}
-    </Wrapper>
-  );
+  return (<Wrapper>{skeletonsRender}</Wrapper>);
 };
 
 export default List;

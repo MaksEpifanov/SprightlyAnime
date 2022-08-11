@@ -13,5 +13,9 @@ export const Wrapper = styled.div`
   }
 `;
 
+export const TitleWrapper = styled.div`
+  margin: 20px;
+`;
+
 export const WrapperInner = styled.div`
 `;

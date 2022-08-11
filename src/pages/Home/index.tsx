@@ -1,33 +1,23 @@
 import { useEffect } from 'react';
+import { useSearchParams } from 'react-router-dom';
 
-import { useAppDispatch, useAppSelector } from 'app/store.hooks';
+import { useAppDispatch } from 'app/store.hooks';
 import { fetchData } from 'features/list/listSlice';
 import { fetchAnimeList, Category } from 'services/API/animeList.service';
 
-import { StatusLoading } from 'types/common.types';
 import { List } from 'features/list';
 
 const HomePage = () => {
   const dispatch = useAppDispatch();
-  const {
-    status, data, errors, pagination,
-  } = useAppSelector((state) => state.list);
+  const [searchParams] = useSearchParams();
+  const page = searchParams.get('page') || 0;
 
   useEffect(() => {
-    dispatch(fetchData(fetchAnimeList.bind(null, Category.now)));
-  }, [dispatch]);
+    dispatch(fetchData(() => fetchAnimeList(Category.now, +page)));
+  }, [dispatch, page]);
 
-  if (status === StatusLoading.failure) {
-    return (
-      <List dataErrors={errors} isFailed />
-    );
-  } if (status === StatusLoading.success) {
-    return (
-      <List data={data} />
-    );
-  }
   return (
-    <List isLoading />
+    <List title="Current season" />
   );
 };
 
