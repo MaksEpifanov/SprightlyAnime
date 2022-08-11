@@ -1,7 +1,9 @@
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
-export const HeaderMenu = styled.header`
+export const Wrapper = styled.header`
+  z-index: 1;
+
   position: fixed;
   top: 0;
   left: 0;

@@ -7,24 +7,39 @@ export const Wrapper = styled.div<SecondBaseDivProps>`
   height: ${(props) => (props.second ? '100px' : '300px')};
   width: ${(props) => (props.second ? '100%' : '180px')};
   max-width: ${(props) => (props.second ? '450px' : null)};
+  padding: ${(props) => (props.second ? '10px' : null)};
 
   display: flex;
   align-items: center;
-  
-  color: var(--main-text-color);
-  border-radius: 10px;
-
-  padding: ${(props) => (props.second ? '10px' : null)};
   flex-direction: ${(props) => (!props.second ? 'column' : null)};
+  
+  border: ${(props) => (props.second ? '2px solid var(--main-bg-color)' : null)};
+  border-radius: 10px;
+  color: var(--main-text-color);
+
   background-color: ${(props) => (props.second ? 'var(--second-bg-color)' : null)};
-
-
   overflow: hidden;
+  transition: border .2s, transform .1s;
   &:hover{
+    border: ${(props) => (props.second ? '2px solid var(--second-text-color)' : null)};
     cursor: pointer;
 
     &&>*:last-child {
       ${(props) => (!props.second ? 'height: 80%' : null)};
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    width: ${(props) => (props.second ? '100%' : '170px')};
+
+    &:hover{
+      &&>*:last-child {
+      ${(props) => (!props.second ? 'height: 0' : null)};
+      }
+
+      &:active {
+      transform: scale(.95);
+      }
     }
   }
 `;
@@ -41,6 +56,7 @@ export const CardImage = styled.div<StyleCardImageProps>`
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+
 `;
 
 export const CardHoverInfo = styled.ul`
@@ -53,7 +69,7 @@ export const CardHoverInfo = styled.ul`
   flex-direction: column;
   gap: 5px;
 
-  border: 1px solid var(--main-text-color);
+  border: 1px solid var(--second-text-color);
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
 

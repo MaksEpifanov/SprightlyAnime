@@ -1,5 +1,7 @@
+import SkeletonCard from 'components/Skeletons/SkeletonCard';
+
 const UpcomingPage = () => (
-  <div>UpcomingPage</div>
+  <SkeletonCard />
 );
 
 export default UpcomingPage;

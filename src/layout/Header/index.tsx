@@ -5,11 +5,11 @@ import MenuLink from 'components/MenuLink';
 import Logo from 'components/Logo';
 
 import {
-  HeaderMenu, Menu,
+  Wrapper, Menu,
 } from './Header.styles';
 
 const Header = () => (
-  <HeaderMenu>
+  <Wrapper>
     <Logo short />
     {/* Search Panel */}
     <Menu>
@@ -27,7 +27,7 @@ const Header = () => (
       </MenuLink>
     </Menu>
     {/* Burger Menu */}
-  </HeaderMenu>
+  </Wrapper>
 );
 
 export default Header;

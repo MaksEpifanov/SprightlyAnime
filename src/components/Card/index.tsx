@@ -1,5 +1,5 @@
-// import { Star } from '@styled-icons/fa-solid';
 import { Star, ArrowUpward } from '@styled-icons/material';
+import { getCurrentDate } from 'utils/helpers/date.helpers';
 import type { CardProps } from './Card.types';
 import {
   Wrapper,
@@ -12,12 +12,6 @@ import {
   CardSecondInfo,
 } from './Card.styles';
 
-const getCurDate = (date: string): string => {
-  const ms = Date.parse(date);
-  const dateFormat = new Date(ms);
-  return dateFormat.toDateString();
-};
-
 const Card: React.FC<CardProps> = ({ second = false, item }) => {
   if (second) {
     return (
@@ -27,7 +21,7 @@ const Card: React.FC<CardProps> = ({ second = false, item }) => {
           <Title>{item.title_english}</Title>
           <CardDownPanelStats second={second}>
             <li>{item.type}</li>
-            <li>{getCurDate(item.aired.from)}</li>
+            <li>{getCurrentDate(item.aired.from)}</li>
           </CardDownPanelStats>
         </CardSecondInfo>
       </Wrapper>
@@ -45,7 +39,7 @@ const Card: React.FC<CardProps> = ({ second = false, item }) => {
         </CardDownPanelStats>
         <span>{item.type}</span>
       </CardDownPanelWrapper>
-      <Title>{item.title_english}</Title>
+      <Title>{item.titles[0].title}</Title>
       <CardHoverInfo>
         <div style={{
           padding: '5px', display: 'flex', flexDirection: 'column', gap: '5px',
@@ -54,6 +48,10 @@ const Card: React.FC<CardProps> = ({ second = false, item }) => {
           <InfoLi>
             <span>Other names: </span>
             {item.titles[1].title}
+          </InfoLi>
+          <InfoLi>
+            <span>Airing: </span>
+            {getCurrentDate(item.aired.from)}
           </InfoLi>
           <InfoLi>
             <span>Rating: </span>

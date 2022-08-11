@@ -31,7 +31,7 @@ const initialState: IAnimeList = {
 };
 
 export const animeListReducer = createSlice({
-  name: 'animeList',
+  name: 'list',
   initialState,
   reducers: {
   },
