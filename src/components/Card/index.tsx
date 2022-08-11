@@ -68,10 +68,10 @@ const Card: React.FC<CardProps> = ({ second = false, item }) => {
           <InfoLi>
             <span>Genre: </span>
             {item.genres.map((genr) => (
-              <>
+              <span key={genr.mal_id}>
                 {genr.name}
-                {' | '}
-              </>
+                {'  '}
+              </span>
             ))}
           </InfoLi>
           <InfoLi>
