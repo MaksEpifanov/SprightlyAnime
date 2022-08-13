@@ -9,7 +9,7 @@ import {
 } from './Pagination.styles';
 
 const Pagination: React.FC<PaginationProps> = ({ short }) => {
-  const [searchParams, setSearchParams] = useSearchParams();
+  const [, setSearchParams] = useSearchParams();
   const { status, pagination } = useAppSelector((state) => state.list);
 
   const handleGoPage = (page: number) => {
@@ -40,9 +40,11 @@ const Pagination: React.FC<PaginationProps> = ({ short }) => {
           <ArrowBackIos />
         </ArrowButton>
 
-        <CurrentPage>
-          <div>{currentPage}</div>
-        </CurrentPage>
+        {!short && (
+          <CurrentPage>
+            <div>{currentPage}</div>
+          </CurrentPage>
+        )}
 
         <ArrowButton
           type="button"
