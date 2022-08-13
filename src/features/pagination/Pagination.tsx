@@ -25,6 +25,7 @@ const Pagination: React.FC<PaginationProps> = ({ short }) => {
             type="button"
             onClick={() => handleGoPage(1)}
             disabled={currentPage < 3}
+            style={{ borderTopLeftRadius: '8px', borderBottomLeftRadius: '8px' }}
           >
             <DbArrow left />
           </ArrowButton>
@@ -34,6 +35,7 @@ const Pagination: React.FC<PaginationProps> = ({ short }) => {
           type="button"
           onClick={() => handleGoPage(currentPage - 1)}
           disabled={currentPage < 2}
+          style={short ? { borderTopLeftRadius: '8px', borderBottomLeftRadius: '8px' } : {}}
         >
           <ArrowBackIos />
         </ArrowButton>
@@ -46,19 +48,23 @@ const Pagination: React.FC<PaginationProps> = ({ short }) => {
           type="button"
           onClick={() => handleGoPage(currentPage + 1)}
           disabled={!pagination.has_next_page}
+          style={short ? { borderTopRightRadius: '8px', borderBottomRightRadius: '8px' } : {}}
         >
           <ArrowForwardIos />
         </ArrowButton>
 
-        {!short && (
-          <ArrowButton
-            type="button"
-            onClick={() => handleGoPage(pagination.last_visible_page)}
-            disabled={currentPage >= pagination.last_visible_page}
-          >
-            <DbArrow />
-          </ArrowButton>
-        )}
+        {
+          !short && (
+            <ArrowButton
+              type="button"
+              onClick={() => handleGoPage(pagination.last_visible_page)}
+              disabled={currentPage >= pagination.last_visible_page}
+              style={{ borderTopRightRadius: '8px', borderBottomRightRadius: '8px' }}
+            >
+              <DbArrow />
+            </ArrowButton>
+          )
+        }
       </Wrapper>
     );
   }

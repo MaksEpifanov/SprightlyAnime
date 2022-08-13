@@ -10,8 +10,8 @@ export const Wrapper = styled.div`
 
 export const ArrowButton = styled.button`
   height: 100%;
-  width: 24px;
-  padding: 5px;
+  width: 30px;
+  padding: 8px;
 
   display: flex;
 
@@ -19,8 +19,15 @@ export const ArrowButton = styled.button`
   background-color: var(--second-bg-color);
   color: var(--main-text-color);
 
+  transition: background-color .4s, color .4s;
+
   &:not([disabled]) {
     cursor: pointer;
+  }
+
+  &:hover:not([disabled]) {
+    background-color: var(--second-text-color);
+    color: white;
   }
 
   &[disabled] {
