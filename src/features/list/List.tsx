@@ -1,34 +1,30 @@
+import { useAppSelector } from 'app/store.hooks';
+import { createNumbersArray } from 'utils/helpers/skeleton.helpers';
+
 import Card from 'components/Card';
 import SkeletonCard from 'components/Skeletons/SkeletonCard';
-import { useAppSelector } from 'app/store.hooks';
 import { StatusLoading } from 'types/common.types';
-import { Wrapper, TitleWrapper } from './List.styles';
+import Error from 'components/Error';
 
-const skeletonData = new Array(25)
-  .fill(null)
-  .map((n, ind) => ind);
+import { Wrapper } from './List.styles';
 
 const List: React.FC = () => {
-  const {
-    status, data,
-  } = useAppSelector((state) => state.list);
+  const { status, data, errors } = useAppSelector((state) => state.list);
 
-  const dataRender = data.map((item) => (
-    <Card item={item} key={item.mal_id} />
-  ));
-
-  const skeletonsRender = skeletonData.map((number) => <SkeletonCard key={number} />);
+  let renderData: React.ReactNode = createNumbersArray(25)
+    .map((number) => <SkeletonCard key={number} />);
 
   if (status === StatusLoading.success) {
-    return (
-      <Wrapper>
-        {dataRender}
-      </Wrapper>
-    );
-  } if (status === StatusLoading.failure) {
-    return (<div>Errors....</div>);
+    renderData = data.map((item) => <Card item={item} key={item.mal_id} />);
   }
-  return (<Wrapper>{skeletonsRender}</Wrapper>);
+  if (status === StatusLoading.failure) {
+    renderData = <Error errors={errors} />;
+  }
+  return (
+    <Wrapper>
+      {renderData}
+    </Wrapper>
+  );
 };
 
 export default List;
