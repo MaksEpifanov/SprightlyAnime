@@ -6,6 +6,9 @@ import { fetchData } from 'features/list/listSlice';
 import { fetchAnimeList, Category } from 'services/API/animeList.service';
 
 import { List } from 'features/list';
+import Pagination from 'features/pagination';
+
+import { Wrapper, TitleWithPagination, Title } from './Home.styles';
 
 const HomePage = () => {
   const dispatch = useAppDispatch();
@@ -17,7 +20,14 @@ const HomePage = () => {
   }, [dispatch, page]);
 
   return (
-    <List title="Current season" />
+    <Wrapper>
+      <TitleWithPagination>
+        <Title>Current season</Title>
+        <Pagination short />
+      </TitleWithPagination>
+      <List />
+      <Pagination />
+    </Wrapper>
   );
 };
 
