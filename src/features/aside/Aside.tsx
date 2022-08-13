@@ -9,6 +9,8 @@ import Card from 'components/Card';
 import Error from 'components/Error';
 import { fetchAsideData } from './asideSlice';
 
+import { Wrapper, TopList, Title } from './Aside.styles';
+
 const Aside = () => {
   const dispatch = useAppDispatch();
   useEffect(() => {
@@ -17,7 +19,7 @@ const Aside = () => {
 
   const { data, status, errors } = useAppSelector((state) => state.aside);
 
-  let renderData: React.ReactNode = createNumbersArray(25)
+  let renderData: React.ReactNode = createNumbersArray(15)
     .map((number) => <SkeletonCard second key={number} />);
 
   if (status === StatusLoading.success) {
@@ -27,10 +29,12 @@ const Aside = () => {
     renderData = <Error errors={errors} />;
   }
   return (
-    <div>
-      <h2>Top anime</h2>
-      {renderData}
-    </div>
+    <Wrapper>
+      <Title>Top anime</Title>
+      <TopList>
+        {renderData}
+      </TopList>
+    </Wrapper>
   );
 };
 
