@@ -48,6 +48,7 @@ export const CardImage = styled.div<StyleCardImageProps>`
   height: 100%;
   width: ${(props) => (!props.second ? '100%' : '80px')};
   
+  flex-shrink: ${(props) => (props.second ? '0' : null)};
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
   border-radius: ${(props) => (props.second ? '10px' : null)};
@@ -112,6 +113,10 @@ export const CardDownPanelStats = styled.div<SecondBaseDivProps>`
   align-items: center;
   gap: ${(props) => (props.second ? '30px' : '5px')};
 
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+
   color: ${(props) => (props.second ? 'var(--placeholder-text-color)' : null)};
 `;
 
@@ -123,14 +128,17 @@ export const CardSecondInfo = styled.div`
   flex-direction: column;
   justify-content: space-between;
 
+  overflow: hidden;
+
   &>*:first-child {
-  font-size: 20px;
+    font-size: 20px;
   }
 `;
 
 export const Title = styled.div`
   margin: 10px 0;
   width: 100%;
+  flex-shrink: 0;
 
   font-size: 16px;
   overflow: hidden;

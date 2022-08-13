@@ -23,6 +23,7 @@ const Wrapper = styled.div<SkeletonCardProps>`
   flex-direction: ${(props) => (!props.second ? 'column' : null)};
 
   background-color: ${(props) => (props.second ? 'var(--second-bg-color)' : null)};
+  border: ${(props) => (props.second ? '2px solid var(--main-bg-color)' : null)};
   border-radius: 10px;
   @media screen and (max-width: 768px) {
     width: ${(props) => (props.second ? '100%' : '170px')};
