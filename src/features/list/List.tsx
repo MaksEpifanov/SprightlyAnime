@@ -8,13 +8,9 @@ const skeletonData = new Array(25)
   .fill(null)
   .map((n, ind) => ind);
 
-interface ListProps {
-  title: string
-}
-
-const List: React.FC<ListProps> = ({ title }) => {
+const List: React.FC = () => {
   const {
-    status, data, errors, pagination,
+    status, data,
   } = useAppSelector((state) => state.list);
 
   const dataRender = data.map((item) => (
@@ -24,16 +20,10 @@ const List: React.FC<ListProps> = ({ title }) => {
   const skeletonsRender = skeletonData.map((number) => <SkeletonCard key={number} />);
 
   if (status === StatusLoading.success) {
-    console.log(pagination);
     return (
-      <>
-        <TitleWrapper>
-          <h2>{title}</h2>
-        </TitleWrapper>
-        <Wrapper>
-          {dataRender}
-        </Wrapper>
-      </>
+      <Wrapper>
+        {dataRender}
+      </Wrapper>
     );
   } if (status === StatusLoading.failure) {
     return (<div>Errors....</div>);
