@@ -18,6 +18,7 @@ export const fetchData = createAsyncThunk(
 const initialState: IAnimeList = {
   data: [],
   pagination: {
+    current_page: 0,
     last_visible_page: 0,
     has_next_page: false,
     items: {
