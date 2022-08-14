@@ -1,5 +1,3 @@
-const Footer = () => (
-  <div>Footer</div>
-);
+import Footer from './Footer';
 
 export default Footer;
