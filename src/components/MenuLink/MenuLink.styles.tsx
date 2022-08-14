@@ -24,4 +24,8 @@ export default styled(NavLink) <NavLinkStyledProps>`
       transform: none;
     }
   }
+
+  @media only screen and (max-width: 768px) {
+    display: none;
+  }
 `;

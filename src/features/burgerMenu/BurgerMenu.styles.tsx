@@ -1,7 +1,8 @@
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 export const StyledMenu = styled.nav<{ open: boolean }>`
-z-index: -3;
+  z-index: -3;
 
   position: absolute;
   top: 110%;
@@ -19,16 +20,23 @@ z-index: -3;
 
   transform: ${({ open }) => (open ? 'translateX(0)' : 'translateX(150%)')};
 
-  a {
-    font-size: 1.2rem;
-    text-transform: uppercase;
+  &>* {
     padding: 0.9rem 1.2rem;
-    color: var(--main-text-color);
-    text-decoration: none;
-    transition: color .3s linear, background-color .3s linear;
 
+    border: none;
     border-radius: 10px;
 
+    background: inherit;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    text-decoration: none;
+    text-align: left;
+    color: var(--main-text-color);
+    
+    
+    cursor: pointer;
+    
+    transition: color .3s linear, background-color .3s linear;
     &:hover {
       color: var(--second-text-color);
       background-color: var(--main-bg-color);
@@ -36,4 +44,10 @@ z-index: -3;
   }
 `;
 
-export const some = '';
+export const AdaptiveLink = styled(Link)`
+  display: none;
+
+  @media only screen and (max-width: 768px) {
+    display: block;
+  }
+`;
