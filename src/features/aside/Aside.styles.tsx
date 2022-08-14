@@ -7,9 +7,11 @@ export const Wrapper = styled.aside`
 `;
 
 export const TopList = styled.div`
+  width: 350px;
+  margin-right: 10px;
+
   display: flex;
   flex-direction: column;
-  width: 350px;
   gap: 5px;
 `;
 

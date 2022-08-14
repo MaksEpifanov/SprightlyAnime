@@ -4,6 +4,8 @@ import { Upcoming } from '@styled-icons/material';
 import MenuLink from 'components/MenuLink';
 import Logo from 'components/Logo';
 
+import Burger from 'features/burger';
+
 import {
   Wrapper, Menu,
 } from './Header.styles';
@@ -25,8 +27,8 @@ const Header = () => (
         <Random height={20} />
         Random
       </MenuLink>
+      <Burger />
     </Menu>
-    {/* Burger Menu */}
   </Wrapper>
 );
 
