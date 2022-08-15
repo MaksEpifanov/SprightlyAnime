@@ -2,11 +2,13 @@
   "name": "sprightlyanime",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://MaksEpifanov.github.io/sprightly/",
   "dependencies": {
     "@reduxjs/toolkit": "^1.8.3",
     "@styled-icons/fa-solid": "^10.34.0",
     "@styled-icons/material": "^10.34.0",
     "axios": "^0.27.2",
+    "gh-pages": "^4.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-loading-skeleton": "^3.1.0",
