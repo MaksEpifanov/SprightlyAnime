@@ -2,7 +2,7 @@
   "name": "sprightlyanime",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://MaksEpifanov.github.io/sprightly/",
+  "homepage": "https://maksepifanov.github.io/SprightlyAnime/",
   "dependencies": {
     "@reduxjs/toolkit": "^1.8.3",
     "@styled-icons/fa-solid": "^10.34.0",
@@ -21,7 +21,9 @@
   },
   "scripts": {
     "start": "react-scripts start",
+    "predeploy": "npm run build",
     "build": "react-scripts build",
+    "deploy": "gh-pages -d build",
     "eject": "react-scripts eject"
   },
   "browserslist": {
