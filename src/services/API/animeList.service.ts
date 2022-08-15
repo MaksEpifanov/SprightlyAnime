@@ -1,4 +1,4 @@
-import type { IListData } from 'types/common.types';
+import type { IListAnimeData } from 'types/common.types';
 import http from '../http';
 
 export enum Category {
@@ -8,6 +8,6 @@ export enum Category {
 }
 
 export const fetchAnimeList = async (category: Category, page = 1) => {
-  const { data } = await http.get<IListData>(category, { params: { page } });
+  const { data } = await http.get<IListAnimeData>(category, { params: { page } });
   return data;
 };

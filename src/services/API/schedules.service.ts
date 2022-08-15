@@ -1,5 +1,5 @@
 import type { IAnime } from 'types/anime.types';
-import type { IResponse } from 'types/common.types';
+import type { IData } from 'types/common.types';
 import http from '../http';
 
 export enum FilterByDay {
@@ -21,6 +21,6 @@ export const fetchSchedules = async (
   const params = {
     filter, kids, limit, sfw,
   };
-  const { data: { data } } = await http.get<IResponse<IAnime[]>>('schedules', { params });
+  const { data: { data } } = await http.get<IData<IAnime[]>>('schedules', { params });
   return data;
 };

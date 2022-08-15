@@ -41,20 +41,28 @@ interface IMalUrl extends IMalBasic {
 
 export interface IImages {
   jpg: {
-    image_url: string | null
-    small_image_url: string | null
-    large_image_url: string | null
+    image_url: string
+    small_image_url: string
+    large_image_url: string
   }
   webp: {
-    image_url: string | null
-    small_image_url: string | null
-    large_image_url: string | null
+    image_url: string
+    small_image_url: string
+    large_image_url: string
   }
 }
 
 export interface ITitle {
   type: string
   title: string
+}
+
+export interface ICharacter extends IMalBasic {
+  images: IImages
+  name_kanji: string | null
+  nicknames: string[]
+  favorites: number
+  about: string | null
 }
 
 export interface IAnime {
@@ -76,8 +84,10 @@ export interface IAnime {
   aired: {
     from: string
     to: string
+    string: string
     // prop
   }
+  synopsis: string
   duration: string | null
   rating: RatingAnime
   score: number | null

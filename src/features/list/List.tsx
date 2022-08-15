@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { useAppSelector } from 'app/store.hooks';
 import { createNumbersArray } from 'utils/helpers/skeleton.helpers';
 
@@ -15,7 +16,7 @@ const List: React.FC = () => {
     .map((number) => <SkeletonCard key={number} />);
 
   if (status === StatusLoading.success) {
-    renderData = data.map((item) => <Card item={item} key={item.mal_id} />);
+    renderData = data.map((item) => <Link to={`/anime/${item.mal_id}`} style={{ textDecoration: 'none' }}><Card item={item} key={item.mal_id} /></Link>);
   }
   if (status === StatusLoading.failure) {
     renderData = <Error errors={errors} />;

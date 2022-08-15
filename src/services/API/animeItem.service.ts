@@ -1,5 +1,5 @@
-import type { IAnime, IImages } from 'types/anime.types';
-import type { IResponse } from 'types/common.types';
+import type { IAnime, IImages, ICharacter } from 'types/anime.types';
+import type { IData } from 'types/common.types';
 import http from '../http';
 
 type IScore = {
@@ -8,7 +8,7 @@ type IScore = {
   percentage: number
 };
 
-interface ICharacter {
+interface IAnimeCharacter {
   character: {
     mal_id: number
     url: string
@@ -29,25 +29,26 @@ interface IStatistics {
 }
 
 export const fetchAnimeById = async (id: number) => {
-  const { data: { data }, status } = await http.get<IResponse<IAnime>>(`anime/${id}`);
-  console.log(status);
+  const { data } = await http.get<IData<IAnime>>(`anime/${id}`);
+  return data;
+};
+
+export const fetchCharacterById = async (id: number) => {
+  const { data } = await http.get<IData<ICharacter>>(`characters/${id}`);
   return data;
 };
 
 export const fetchRandomAnime = async () => {
-  const { data: { data }, status } = await http.get<IResponse<IAnime>>('random/anime');
-  console.log(status);
+  const { data } = await http.get<IData<IAnime>>('random/anime');
   return data;
 };
 
 export const fetchCharactersAnime = async (id: number) => {
-  const { data: { data }, status } = await http.get<IResponse<ICharacter[]>>(`anime/${id}/characters`);
-  console.log(status);
+  const { data } = await http.get<IData<IAnimeCharacter[]>>(`anime/${id}/characters`);
   return data;
 };
 
 export const fetchStatisticsAnime = async (id: number) => {
-  const { data: { data }, status } = await http.get<IResponse<IStatistics>>(`anime/${id}/statistics`);
-  console.log(status);
+  const { data } = await http.get<IData<IStatistics>>(`anime/${id}/statistics`);
   return data;
 };

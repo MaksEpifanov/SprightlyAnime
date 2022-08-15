@@ -18,11 +18,11 @@ export interface IPagination {
   }
 }
 
-export interface IResponse<T> {
+export interface IData<T> {
   data: T
 }
 
-export interface IListData {
+export interface IListAnimeData {
   data: IAnime[]
   pagination: IPagination
 }

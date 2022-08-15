@@ -1,4 +1,4 @@
-import type { IListData } from 'types/common.types';
+import type { IListAnimeData } from 'types/common.types';
 import type { TypeAnime, StatusAnime, RatingAnime } from 'types/anime.types';
 import http from '../http';
 
@@ -42,6 +42,6 @@ interface FetchSearchProps {
 }
 
 export const fetchSearchAnime = async ({ params }: FetchSearchProps) => {
-  const { data } = await http.get<IListData>('anime');
+  const { data } = await http.get<IListAnimeData>('anime');
   return data;
 };
