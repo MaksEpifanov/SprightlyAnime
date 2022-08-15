@@ -1,11 +1,6 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-import { StatusLoading, IListData, SerializedError } from 'types/common.types';
-
-export interface IAnimeList extends IListData {
-  status: StatusLoading
-  errors: SerializedError | null
-}
-type FetchDataType = () => Promise<IListData>;
+import { StatusLoading } from 'types/common.types';
+import { FetchDataType, IAnimeList } from './Aside.types';
 
 export const fetchAsideData = createAsyncThunk(
   'anime/fetchAsideData',
