@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/sprightly/static/css/main.b2a3f954.css",
-    "main.js": "/sprightly/static/js/main.b503f92a.js",
-    "static/media/initialPage.jpg": "/sprightly/static/media/initialPage.22edb9a57dff67ebaafc.jpg",
-    "index.html": "/sprightly/index.html",
-    "main.b2a3f954.css.map": "/sprightly/static/css/main.b2a3f954.css.map",
-    "main.b503f92a.js.map": "/sprightly/static/js/main.b503f92a.js.map"
+    "main.css": "/SprightlyAnime/static/css/main.b2a3f954.css",
+    "main.js": "/SprightlyAnime/static/js/main.07bfda8f.js",
+    "static/media/initialPage.jpg": "/SprightlyAnime/static/media/initialPage.22edb9a57dff67ebaafc.jpg",
+    "index.html": "/SprightlyAnime/index.html",
+    "main.b2a3f954.css.map": "/SprightlyAnime/static/css/main.b2a3f954.css.map",
+    "main.07bfda8f.js.map": "/SprightlyAnime/static/js/main.07bfda8f.js.map"
   },
   "entrypoints": [
     "static/css/main.b2a3f954.css",
-    "static/js/main.b503f92a.js"
+    "static/js/main.07bfda8f.js"
   ]
 }
