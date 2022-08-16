@@ -5,7 +5,7 @@ import { createNumbersArray } from 'utils/helpers/skeleton.helpers';
 import Card from 'components/Card';
 import SkeletonCard from 'components/Skeletons/SkeletonCard';
 import { StatusLoading } from 'types/common.types';
-import Error from 'components/Error';
+import Error from 'components/Error/Error';
 
 import { Wrapper } from './List.styles';
 

@@ -1,4 +1,4 @@
-import listSlice from './listSlice';
+import listSlice, { fetchData } from './listSlice';
 import List from './List';
 
-export { List, listSlice };
+export { List, listSlice, fetchData };

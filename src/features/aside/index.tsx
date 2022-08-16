@@ -1,4 +1,7 @@
 import Aside from './Aside';
-import asideSlice from './asideSlice';
+import AsideFilter from './AsideFilter';
+import asideSlice, { fetchAsideData } from './asideSlice';
 
-export { Aside, asideSlice };
+export {
+  Aside, AsideFilter, asideSlice, fetchAsideData,
+};

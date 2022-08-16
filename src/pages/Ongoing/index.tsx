@@ -1,5 +1,3 @@
-const OngoingPage = () => (
-  <div>OngoingPage</div>
-);
+import OngoingPage from './Ongoing';
 
 export default OngoingPage;

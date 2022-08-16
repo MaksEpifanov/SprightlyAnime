@@ -4,7 +4,7 @@ import { fetchAnimeById } from 'services/API/animeItem.service';
 import { StatusLoading, SerializedError } from 'types/common.types';
 import type { IAnime } from 'types/anime.types';
 
-export interface IAnimeInfo {
+interface IAnimeInfo {
   data: IAnime | null
   status: StatusLoading
   errors: SerializedError | null
@@ -24,7 +24,7 @@ const initialState: IAnimeInfo = {
   errors: null,
 };
 
-export const infoReducer = createSlice({
+const infoReducer = createSlice({
   name: 'animeInfo',
   initialState,
   reducers: {

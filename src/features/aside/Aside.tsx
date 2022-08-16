@@ -6,7 +6,7 @@ import { createNumbersArray } from 'utils/helpers/skeleton.helpers';
 import { StatusLoading } from 'types/common.types';
 import SkeletonCard from 'components/Skeletons/SkeletonCard';
 import Card from 'components/Card';
-import Error from 'components/Error';
+import Error from 'components/Error/Error';
 import { Link } from 'react-router-dom';
 import { fetchAsideData } from './asideSlice';
 

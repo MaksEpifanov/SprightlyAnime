@@ -31,7 +31,7 @@ const initialState: IAnimeList = {
   errors: null,
 };
 
-export const animeListReducer = createSlice({
+const animeListReducer = createSlice({
   name: 'list',
   initialState,
   reducers: {

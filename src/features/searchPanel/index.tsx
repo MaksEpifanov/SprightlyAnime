@@ -1,4 +1,4 @@
-import searchPanelSlice from "./searchPanel.slice";
-import SearchPanel from "./SearchPanel";
+import searchPanelSlice from './searchPanel.slice';
+import SearchPanel from './SearchPanel';
 
-export { searchPanelSlice, SearchPanel }
+export { searchPanelSlice, SearchPanel };
