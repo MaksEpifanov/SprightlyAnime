@@ -1,46 +1,128 @@
-# Getting Started with Create React App
+<div id="top"></div>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Sprightly anime
 
-## Available Scripts
+Сайт о аниме.
 
-In the project directory, you can run:
+<details>
+  <summary>Table of Contents</summary>
+  <ol>
+    <li>
+      <a href="#overview">Overview</a>
+      <ul>
+        <li><a href="#screenshots">Screenshots</a></li>
+        <li><a href="#links">Links</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="#my-process">My process</a>
+      <ul>
+        <li><a href="#technologies">Technologies</a></li>
+        <li><a href="#features">Features</a></li>
+        <li><a href="#what-i-learned">What I learned</a></li>
+      </ul>
+    </li>
+    <li><a href="#roadmap">Roadmap</a></li>
+    <li><a href="#installation">Installation</a></li>
+    <li><a href="#license">License</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ol>
+</details>
 
-### `npm start`
+## Overview
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### Screenshots
+<p align=center>Desktop version</p>
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+<p align=center>Mobile version</p>
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Links
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+-   [Live Site URL](https://maksepifanov.github.io/SprightlyAnime/)
 
-### `npm run eject`
+<p align="right">(<a href="#top">back to top</a>)</p>
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### Technologies
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+![TypeScript](https://img.shields.io/badge/typescript-3178C6.svg?style=for-the-badge&logo=typescript&logoColor=white)
+![React](https://img.shields.io/badge/react-61DAFB.svg?style=for-the-badge&logo=react&logoColor=black)
+![Redux Toolkit](https://img.shields.io/badge/redux_toolkit-764ABC.svg?style=for-the-badge&logo=redux&logoColor=white)
+![React router](https://img.shields.io/badge/react_router-CA4245.svg?style=for-the-badge&logo=reactrouter&logoColor=white)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+![Styled Component](https://img.shields.io/badge/Styled_components-DB7093.svg?style=for-the-badge&logo=styledcomponents&logoColor=white)
+![ESlint](https://img.shields.io/badge/ESLint-4B32C3.svg?style=for-the-badge&logo=eslint&logoColor=white)
+![ESlint Airbnb](https://img.shields.io/badge/eslint_airbnb-FF5A5F.svg?style=for-the-badge&logo=airbnb&logoColor=white)
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+### Features
 
-## Learn More
+- Данные берутся с [jikan.moe](https://docs.api.jikan.moe/). Jikan is an Unofficial MyAnimeList API
+- Просмотр данных об аниме.
+- Загрузка  данных в зависимости от выбранного контента.
+- Обработка загрузки. Если загружается, то показывается Скелетон компонент, если ошибка, то показывается ошибка.
+- Типизация с помощью TypeScript.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+<p align="right">(<a href="#top">back to top</a>)</p>
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### What I learned
+
+- Навык работы с Redux Toolkit и асинхронными запросами.
+- Навык типизации с помощью TypeScript.
+- Написание стилей с помощью Styled Components.
+
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+## Roadmap
+
+- [ ] Реализовать поиск с фильтром.
+- [ ] Карусель с наиболее актуальными аниме на домашнюю странице.
+- [ ] Добавить расписание выхода аниме. Как на отдельную страницу, так и в низу домашней страницы.
+- [ ] На странице аниме добавить компонент (с реализацией redux slice) о персонажах в этом аниме.
+- [ ] Создать страницу о определенном персонаже.
+- [ ] Error Boundary.
+
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+## Installation
+
+1. Клонировать репозиторий 
+  ```sh
+  git clone https://github.com/MaksEpifanov/SprightlyAnime
+  ```
+2. Установить зависимости
+  ```sh
+  npm install
+  ```
+3. 
+Запустить проект
+  ```sh
+  npm start
+  ```
+Собрать проект
+  ```sh
+  npm build
+  ```
+4. Для размещения на github pages в `package.json` изменить `homepage`
+  ```sh
+  npm deploy
+  ```
+
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+## License
+
+Distributed under the MIT License. See `LICENSE.txt` for more information.
+
+## Contact
+
+Maks Epifanov
+
+[![Twitter](https://img.shields.io/badge/Twitter-%231DA1F2.svg?style=for-the-badge&logo=Twitter&logoColor=white)](https://twitter.com/klimov4_maks)
+[![Telegram](https://img.shields.io/badge/Telegram-2CA5E0?style=for-the-badge&logo=telegram&logoColor=white)](https://t.me/maksepifanov)
+[![Gmail](https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:maksepifanovbr@gmail.com)
+
+<p align="right">(<a href="#top">back to top</a>)</p>
+

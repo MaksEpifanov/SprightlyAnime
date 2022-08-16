@@ -8,7 +8,7 @@ const AnimeInfoPage = () => {
     setTimeout(() => {
       window.scrollTo({ behavior: 'smooth', top: 0 });
     }, 100);
-  }, [location]);
+  }, [location.pathname]);
   return (
     <AnimeInfo />
   );
