@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/SprightlyAnime/static/css/main.b2a3f954.css",
-    "main.js": "/SprightlyAnime/static/js/main.65b6cc6d.js",
+    "main.js": "/SprightlyAnime/static/js/main.ae6b4ef2.js",
     "static/media/initialPage.jpg": "/SprightlyAnime/static/media/initialPage.22edb9a57dff67ebaafc.jpg",
     "index.html": "/SprightlyAnime/index.html",
     "main.b2a3f954.css.map": "/SprightlyAnime/static/css/main.b2a3f954.css.map",
-    "main.65b6cc6d.js.map": "/SprightlyAnime/static/js/main.65b6cc6d.js.map"
+    "main.ae6b4ef2.js.map": "/SprightlyAnime/static/js/main.ae6b4ef2.js.map"
   },
   "entrypoints": [
     "static/css/main.b2a3f954.css",
-    "static/js/main.65b6cc6d.js"
+    "static/js/main.ae6b4ef2.js"
   ]
 }
