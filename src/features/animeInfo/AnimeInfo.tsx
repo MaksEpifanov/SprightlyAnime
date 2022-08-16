@@ -1,20 +1,29 @@
-import { useEffect } from 'react';
+import { useEffect, useMemo } from 'react';
 import { useParams } from 'react-router-dom';
 
 import { useAppDispatch, useAppSelector } from 'app/store.hooks';
 import { StatusLoading } from 'types/common.types';
 import Anime from 'components/Anime/Anime';
-import { fetchAnimeInfo } from './animeInfoSlice';
+import { fetchAnimeInfo, fetchRandomAnimeInfo } from './animeInfoSlice';
 
-const AnimeInfo: React.FC = () => {
-  const { id } = useParams();
+interface AnimeInfoProps {
+  random?: boolean
+}
+
+const AnimeInfo: React.FC<AnimeInfoProps> = ({ random = false }) => {
   const dispatch = useAppDispatch();
+
+  const { id } = useParams();
   const { data, status } = useAppSelector((state) => state.animeInfo);
+
   useEffect(() => {
-    if (id) {
+    if (id && !random) {
       dispatch(fetchAnimeInfo(+id));
+    } else if (random) {
+      dispatch(fetchRandomAnimeInfo());
     }
-  }, [dispatch, id]);
+  }, [dispatch, id, random]);
+
   if (status === StatusLoading.success) {
     return <Anime anime={data} />;
   }

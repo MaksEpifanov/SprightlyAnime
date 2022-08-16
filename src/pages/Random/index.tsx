@@ -1,5 +1,7 @@
+import AnimeInfo from 'features/animeInfo';
+
 const RandomPage = () => (
-  <div>RandomPage</div>
+  <AnimeInfo random />
 );
 
 export default RandomPage;

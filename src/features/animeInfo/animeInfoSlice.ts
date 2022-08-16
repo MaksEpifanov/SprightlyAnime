@@ -1,6 +1,6 @@
-import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
+import { createAsyncThunk, createSlice, isAnyOf } from '@reduxjs/toolkit';
 
-import { fetchAnimeById } from 'services/API/animeItem.service';
+import { fetchAnimeById, fetchRandomAnime } from 'services/API/animeItem.service';
 import { StatusLoading, SerializedError } from 'types/common.types';
 import type { IAnime } from 'types/anime.types';
 
@@ -18,6 +18,14 @@ export const fetchAnimeInfo = createAsyncThunk(
   },
 );
 
+export const fetchRandomAnimeInfo = createAsyncThunk(
+  'anime/fetchRandomAnime',
+  async () => {
+    const res = await fetchRandomAnime();
+    return res;
+  },
+);
+
 const initialState: IAnimeInfo = {
   data: null,
   status: StatusLoading.idle,
@@ -30,19 +38,29 @@ const infoReducer = createSlice({
   reducers: {
   },
   extraReducers: (builder) => {
-    builder.addCase(fetchAnimeInfo.fulfilled, (state, action): void => {
-      state.data = action.payload.data;
-      state.status = StatusLoading.success;
-      state.errors = null;
-    });
-    builder.addCase(fetchAnimeInfo.pending, (state): void => {
-      state.status = StatusLoading.loading;
-      state.errors = null;
-    });
-    builder.addCase(fetchAnimeInfo.rejected, (state, action): void => {
-      state.errors = action.error;
-      state.status = StatusLoading.failure;
-    });
+    builder
+      .addMatcher(
+        isAnyOf(fetchAnimeInfo.fulfilled, fetchRandomAnimeInfo.fulfilled),
+        (state, action): void => {
+          state.data = action.payload.data;
+          state.status = StatusLoading.success;
+          state.errors = null;
+        },
+      )
+      .addMatcher(
+        isAnyOf(fetchAnimeInfo.pending, fetchRandomAnimeInfo.pending),
+        (state): void => {
+          state.status = StatusLoading.loading;
+          state.errors = null;
+        },
+      )
+      .addMatcher(
+        isAnyOf(fetchAnimeInfo.rejected, fetchRandomAnimeInfo.rejected),
+        (state, action): void => {
+          state.errors = action.error;
+          state.status = StatusLoading.failure;
+        },
+      );
   },
 });
 

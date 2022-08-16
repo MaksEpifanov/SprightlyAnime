@@ -39,7 +39,7 @@ const Anime: React.FC<AnimeProps> = ({ anime, loading }) => {
           <StAnimeInfoTitle>{titles[0].title}</StAnimeInfoTitle>
           <StAnimeInfoText>
             {titles.map((title) => (
-              <span key={title.title}>
+              <span key={title.title + title.type}>
                 {title.title}
                 {' | '}
               </span>

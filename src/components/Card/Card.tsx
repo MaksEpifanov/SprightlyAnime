@@ -16,7 +16,7 @@ const Card: React.FC<CardProps> = ({ second = false, item }) => {
   if (second) {
     return (
       <Wrapper second={second}>
-        <StCardImage linkImg={item.images.webp?.large_image_url} second={second} />
+        <StCardImage linkImg={item.images.webp.large_image_url} second={second} />
         <StCardSecondInfo>
           <StTitle>{item.titles[0].title}</StTitle>
           <StCardDownPanelStats second={second}>
