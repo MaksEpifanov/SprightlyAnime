@@ -6,7 +6,7 @@ export const Wrapper = styled.aside`
   }
 `;
 
-export const TopList = styled.div`
+export const StTopList = styled.div`
   width: 350px;
   margin-right: 10px;
 
@@ -15,7 +15,7 @@ export const TopList = styled.div`
   gap: 5px;
 `;
 
-export const Title = styled.h3`
+export const StTitle = styled.h3`
   padding: 10px 0;
   color: var(--main-text-color);
 `;

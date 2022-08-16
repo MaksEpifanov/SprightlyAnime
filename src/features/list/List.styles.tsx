@@ -12,10 +12,5 @@ export const Wrapper = styled.div`
     gap: 10px;
   }
 `;
-
-export const TitleWrapper = styled.div`
-  margin: 20px;
-`;
-
-export const WrapperInner = styled.div`
+export const StWrapperInner = styled.div`
 `;

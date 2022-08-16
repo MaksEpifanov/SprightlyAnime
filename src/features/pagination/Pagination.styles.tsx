@@ -8,7 +8,7 @@ export const Wrapper = styled.div`
   color: var(--main-text-color);
 `;
 
-export const ArrowButton = styled.button`
+export const StArrowButton = styled.button`
   height: 100%;
   width: 30px;
   padding: 8px;
@@ -35,7 +35,7 @@ export const ArrowButton = styled.button`
   }
 `;
 
-export const CurrentPage = styled.div`
+export const StCurrentPage = styled.div`
   height: 100%;
   padding: 0 10px;
 
@@ -45,6 +45,6 @@ export const CurrentPage = styled.div`
   background-color: var(--second-bg-color);
 `;
 
-export const DbArrow = styled(DoubleArrow) <{ left?: boolean }>`
+export const StDbArrow = styled(DoubleArrow) <{ left?: boolean }>`
   ${(props) => (props.left ? 'transform: rotate(180deg)' : null)};
 `;

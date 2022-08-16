@@ -30,7 +30,7 @@ const Wrapper = styled.div<SkeletonCardProps>`
   }
 `;
 
-const SkeletonDiv = styled.div<SkeletonDivProps>`
+const StSkeletonDiv = styled.div<SkeletonDivProps>`
   width: ${(props) => props.width};
   height: ${(props) => props.height};
 `;
@@ -40,14 +40,14 @@ const SkeletonCard = ({ second = false }: SkeletonCardProps) => {
     return (
       <SkeletonTheme baseColor="#1c1c1c" highlightColor="#666666">
         <Wrapper second={second}>
-          <SkeletonDiv width={second ? '80px' : '100%'} height="80%">
+          <StSkeletonDiv width={second ? '80px' : '100%'} height="80%">
             <Skeleton height="98%" width={80} />
-          </SkeletonDiv>
-          <SkeletonDiv width="100%" height="80%">
+          </StSkeletonDiv>
+          <StSkeletonDiv width="100%" height="80%">
             <Skeleton />
             <br />
             <Skeleton />
-          </SkeletonDiv>
+          </StSkeletonDiv>
         </Wrapper>
       </SkeletonTheme>
     );
@@ -55,13 +55,13 @@ const SkeletonCard = ({ second = false }: SkeletonCardProps) => {
   return (
     <SkeletonTheme baseColor="#1c1c1c" highlightColor="#666666">
       <Wrapper second={second}>
-        <SkeletonDiv width={second ? '80px' : '100%'} height="80%">
+        <StSkeletonDiv width={second ? '80px' : '100%'} height="80%">
           <Skeleton height="98%" />
-        </SkeletonDiv>
-        <SkeletonDiv width="100%" height="10%">
+        </StSkeletonDiv>
+        <StSkeletonDiv width="100%" height="10%">
           <Skeleton />
-        </SkeletonDiv>
-        <SkeletonDiv width="100%" height="10%"><Skeleton /></SkeletonDiv>
+        </StSkeletonDiv>
+        <StSkeletonDiv width="100%" height="10%"><Skeleton /></StSkeletonDiv>
       </Wrapper>
     </SkeletonTheme>
   );

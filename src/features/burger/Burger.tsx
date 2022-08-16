@@ -1,12 +1,12 @@
-import { StyledBurger } from './Burger.styles';
+import { StBurger } from './Burger.styles';
 import { BurgerProps } from './Burger.types';
 
 const Burger: React.FC<BurgerProps> = ({ open, setOpen }) => (
-  <StyledBurger open={open} onClick={() => setOpen(!open)}>
+  <StBurger open={open} onClick={() => setOpen(!open)}>
     <div />
     <div />
     <div />
-  </StyledBurger>
+  </StBurger>
 );
 
 export default Burger;

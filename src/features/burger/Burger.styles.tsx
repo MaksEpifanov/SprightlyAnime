@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const StyledBurger = styled.div<{ open: boolean }>`
+export const StBurger = styled.div<{ open: boolean }>`
   padding: 0;
   width: 2rem;
   height: 2rem;

@@ -1,5 +1,3 @@
-const UpcomingPage = () => (
-  <div>Som</div>
-);
+import UpcomingPage from './Upcoming';
 
 export default UpcomingPage;

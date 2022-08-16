@@ -5,7 +5,7 @@ import { StatusLoading } from 'types/common.types';
 import { useAppSelector } from 'app/store.hooks';
 import { PaginationProps } from './Pagination.types';
 import {
-  Wrapper, ArrowButton, CurrentPage, DbArrow,
+  Wrapper, StArrowButton, StCurrentPage, StDbArrow,
 } from './Pagination.styles';
 
 const Pagination: React.FC<PaginationProps> = ({ short }) => {
@@ -21,50 +21,50 @@ const Pagination: React.FC<PaginationProps> = ({ short }) => {
     return (
       <Wrapper>
         {!short && (
-          <ArrowButton
+          <StArrowButton
             type="button"
             onClick={() => handleGoPage(1)}
             disabled={currentPage < 3}
             style={{ borderTopLeftRadius: '8px', borderBottomLeftRadius: '8px' }}
           >
-            <DbArrow left />
-          </ArrowButton>
+            <StDbArrow left />
+          </StArrowButton>
         )}
 
-        <ArrowButton
+        <StArrowButton
           type="button"
           onClick={() => handleGoPage(currentPage - 1)}
           disabled={currentPage < 2}
           style={short ? { borderTopLeftRadius: '8px', borderBottomLeftRadius: '8px' } : {}}
         >
           <ArrowBackIos />
-        </ArrowButton>
+        </StArrowButton>
 
         {!short && (
-          <CurrentPage>
+          <StCurrentPage>
             <div>{currentPage}</div>
-          </CurrentPage>
+          </StCurrentPage>
         )}
 
-        <ArrowButton
+        <StArrowButton
           type="button"
           onClick={() => handleGoPage(currentPage + 1)}
           disabled={!pagination.has_next_page}
           style={short ? { borderTopRightRadius: '8px', borderBottomRightRadius: '8px' } : {}}
         >
           <ArrowForwardIos />
-        </ArrowButton>
+        </StArrowButton>
 
         {
           !short && (
-            <ArrowButton
+            <StArrowButton
               type="button"
               onClick={() => handleGoPage(pagination.last_visible_page)}
               disabled={currentPage >= pagination.last_visible_page}
               style={{ borderTopRightRadius: '8px', borderBottomRightRadius: '8px' }}
             >
-              <DbArrow />
-            </ArrowButton>
+              <StDbArrow />
+            </StArrowButton>
           )
         }
       </Wrapper>

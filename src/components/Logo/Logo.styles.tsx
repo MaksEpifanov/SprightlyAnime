@@ -16,11 +16,11 @@ export const Wrapper = styled.div<LogoProps>`
   }
 `;
 
-export const LinkLogo = styled(Link)`
+export const StLinkLogo = styled(Link)`
   text-decoration: none;
   color: white;
 `;
 
-export const AnimeSpan = styled.span`
+export const StAnimeSpan = styled.span`
   color: #a8476b;
 `;

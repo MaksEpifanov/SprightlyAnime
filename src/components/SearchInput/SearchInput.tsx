@@ -3,7 +3,7 @@ import {
 } from 'react';
 
 import {
-  Wrapper, Input, ClearButton, SearchIcon,
+  Wrapper, StInput, StClearButton, StSearchIcon,
 } from './SearchInput.styles';
 import { SearchInputProps } from './SearchInput.types';
 
@@ -24,9 +24,9 @@ const SearchInput: React.FC<SearchInputProps> = ({ gray = false }) => {
 
   return (
     <Wrapper gray={gray}>
-      <SearchIcon height={20} />
-      <Input value={inputText} onChange={handleInput} ref={inputEl} gray={gray} />
-      <ClearButton onClick={onClearInput} gray={gray}>Clear</ClearButton>
+      <StSearchIcon height={20} />
+      <StInput value={inputText} onChange={handleInput} ref={inputEl} gray={gray} />
+      <StClearButton onClick={onClearInput} gray={gray}>Clear</StClearButton>
     </Wrapper>
   );
 };

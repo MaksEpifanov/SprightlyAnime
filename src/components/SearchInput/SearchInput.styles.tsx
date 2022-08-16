@@ -18,7 +18,7 @@ export const Wrapper = styled.div<SearchInputProps>`
   background-color: ${(props) => (props.gray ? 'var(--second-bg-color)' : 'var(--main-bg-color)')};
 `;
 
-export const Input = styled.input.attrs({
+export const StInput = styled.input.attrs({
   type: 'text',
   placeholder: 'Search anime...',
 }) <SearchInputProps>`
@@ -34,7 +34,7 @@ export const Input = styled.input.attrs({
   }
 `;
 
-export const SearchIcon = styled(Search)`
+export const StSearchIcon = styled(Search)`
   padding: 0 10px;
 
   color: var(--placeholder-text-color);
@@ -46,7 +46,7 @@ export const SearchIcon = styled(Search)`
   }
 `;
 
-export const ClearButton = styled.button<SearchInputProps>`
+export const StClearButton = styled.button<SearchInputProps>`
   border: none;
 
   background-color: ${(props) => (props.gray ? 'var(--second-bg-color)' : 'var(--main-bg-color)')};

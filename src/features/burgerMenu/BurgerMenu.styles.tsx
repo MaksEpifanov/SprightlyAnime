@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
-export const StyledMenu = styled.nav<{ open: boolean }>`
+export const StMenu = styled.nav<{ open: boolean }>`
   z-index: -3;
 
   position: absolute;
@@ -44,7 +44,7 @@ export const StyledMenu = styled.nav<{ open: boolean }>`
   }
 `;
 
-export const AdaptiveLink = styled(Link)`
+export const StAdaptiveLink = styled(Link)`
   display: none;
 
   @media only screen and (max-width: 768px) {

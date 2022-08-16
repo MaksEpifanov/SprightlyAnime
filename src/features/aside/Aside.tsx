@@ -10,7 +10,7 @@ import Error from 'components/Error/Error';
 import { Link } from 'react-router-dom';
 import { fetchAsideData } from './asideSlice';
 
-import { Wrapper, TopList, Title } from './Aside.styles';
+import { Wrapper, StTopList, StTitle } from './Aside.styles';
 
 const Aside = () => {
   const dispatch = useAppDispatch();
@@ -31,10 +31,10 @@ const Aside = () => {
   }
   return (
     <Wrapper>
-      <Title>Top anime</Title>
-      <TopList>
+      <StTitle>Top anime</StTitle>
+      <StTopList>
         {renderData}
-      </TopList>
+      </StTopList>
     </Wrapper>
   );
 };

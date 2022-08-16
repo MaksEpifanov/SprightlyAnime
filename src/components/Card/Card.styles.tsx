@@ -44,7 +44,7 @@ export const Wrapper = styled.div<SecondBaseDivProps>`
   }
 `;
 
-export const CardImage = styled.div<StyleCardImageProps>`
+export const StCardImage = styled.div<StyleCardImageProps>`
   height: 100%;
   width: ${(props) => (!props.second ? '100%' : '80px')};
   
@@ -60,7 +60,7 @@ export const CardImage = styled.div<StyleCardImageProps>`
 
 `;
 
-export const CardHoverInfo = styled.ul`
+export const StCardHoverInfo = styled.ul`
   position: absolute;
   bottom: 20%;
 
@@ -81,7 +81,7 @@ export const CardHoverInfo = styled.ul`
   transition: height .3s;
 `;
 
-export const InfoLi = styled.li`
+export const StInfoLi = styled.li`
   list-style: none;
 
   font-size: 14px;
@@ -92,7 +92,7 @@ export const InfoLi = styled.li`
   }
 `;
 
-export const CardDownPanelWrapper = styled.div`
+export const StCardDownPanelWrapper = styled.div`
   padding: 5px;
   width: 100%;
   
@@ -106,7 +106,7 @@ export const CardDownPanelWrapper = styled.div`
   font-size: 14px;
 `;
 
-export const CardDownPanelStats = styled.div<SecondBaseDivProps>`
+export const StCardDownPanelStats = styled.div<SecondBaseDivProps>`
   margin-left: ${(props) => (props.second ? '20px' : null)};
 
   display: flex;
@@ -120,7 +120,7 @@ export const CardDownPanelStats = styled.div<SecondBaseDivProps>`
   color: ${(props) => (props.second ? 'var(--placeholder-text-color)' : null)};
 `;
 
-export const CardSecondInfo = styled.div`
+export const StCardSecondInfo = styled.div`
   margin-left: 10px;
   margin-bottom: 20px;
 
@@ -135,7 +135,7 @@ export const CardSecondInfo = styled.div`
   }
 `;
 
-export const Title = styled.div`
+export const StTitle = styled.div`
   margin: 10px 0;
   width: 100%;
   flex-shrink: 0;
