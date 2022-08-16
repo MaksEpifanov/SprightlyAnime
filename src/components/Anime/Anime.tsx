@@ -39,7 +39,7 @@ const Anime: React.FC<AnimeProps> = ({ anime, loading }) => {
           <StAnimeInfoTitle>{titles[0].title}</StAnimeInfoTitle>
           <StAnimeInfoText>
             {titles.map((title) => (
-              <span>
+              <span key={title.title}>
                 {title.title}
                 {' | '}
               </span>
@@ -59,7 +59,7 @@ const Anime: React.FC<AnimeProps> = ({ anime, loading }) => {
                 Studios:
                 {' '}
                 {studios.map((studio) => (
-                  <span>
+                  <span key={studio.mal_id}>
                     {studio.name}
                     {', '}
                   </span>
@@ -79,7 +79,7 @@ const Anime: React.FC<AnimeProps> = ({ anime, loading }) => {
                 Genre:
                 {' '}
                 {genres.map((genre) => (
-                  <span>
+                  <span key={genre.mal_id}>
                     {genre.name}
                     {' | '}
                   </span>

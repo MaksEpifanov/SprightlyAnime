@@ -16,7 +16,6 @@ const AnimeInfo: React.FC = () => {
     }
   }, [dispatch, id]);
   if (status === StatusLoading.success) {
-    console.log(data);
     return <Anime anime={data} />;
   }
   return (
