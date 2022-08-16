@@ -24,7 +24,7 @@ const Aside = () => {
     .map((number) => <SkeletonCard second key={number} />);
 
   if (status === StatusLoading.success) {
-    renderData = data.map((item) => <Link to={`/anime/${item.mal_id}`} style={{ textDecoration: 'none' }}><Card second item={item} key={item.mal_id} /></Link>);
+    renderData = data.map((item) => <Link to={`/anime/${item.mal_id}`} key={item.mal_id} style={{ textDecoration: 'none' }}><Card second item={item} /></Link>);
   }
   if (status === StatusLoading.failure) {
     renderData = <Error errors={errors} />;

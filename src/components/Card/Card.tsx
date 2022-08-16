@@ -16,9 +16,9 @@ const Card: React.FC<CardProps> = ({ second = false, item }) => {
   if (second) {
     return (
       <Wrapper second={second}>
-        <StCardImage linkImg={item.images.webp.large_image_url} second={second} />
+        <StCardImage linkImg={item.images.webp?.large_image_url} second={second} />
         <StCardSecondInfo>
-          <StTitle>{item.title_english}</StTitle>
+          <StTitle>{item.titles[0].title}</StTitle>
           <StCardDownPanelStats second={second}>
             <li>{item.type}</li>
             <li>{getCurrentDate(item.aired.from)}</li>
@@ -47,20 +47,24 @@ const Card: React.FC<CardProps> = ({ second = false, item }) => {
         >
           <StInfoLi>
             <span>Other names: </span>
-            {item.titles[1].title}
+            {item?.titles[1]?.title}
           </StInfoLi>
-          <StInfoLi>
-            <span>Airing: </span>
-            {getCurrentDate(item.aired.from)}
-          </StInfoLi>
+          {item.aired.from ? (
+            <StInfoLi>
+              <span>Airing: </span>
+              {getCurrentDate(item.aired.from)}
+            </StInfoLi>
+          ) : null}
           <StInfoLi>
             <span>Rating: </span>
             {item.rating}
           </StInfoLi>
-          <StInfoLi>
-            <span>Duration: </span>
-            {item.duration}
-          </StInfoLi>
+          {item.duration !== 'Unknown' ? (
+            <StInfoLi>
+              <span>Duration: </span>
+              {item.duration}
+            </StInfoLi>
+          ) : null}
           <StInfoLi>
             <span>Status: </span>
             {item.status}

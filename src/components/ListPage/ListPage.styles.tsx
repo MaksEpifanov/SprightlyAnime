@@ -8,11 +8,11 @@ export const Wrapper = styled.main`
   gap: 20px;
 `;
 
-export const Title = styled.h2`
+export const StTitle = styled.h2`
   color: var(--main-text-color);
 `;
 
-export const TitleWithPagination = styled.div`
+export const StTitleWithPagination = styled.div`
   width: 100%;
   padding: 0 30px;
 
